@@ -11,6 +11,14 @@
 
 // [ 应用入口文件 ]
 
+
+// 定义配置文件目录和应用目录同级
+define('CONF_PATH', __DIR__.'/../config/');
+
+//SESSION保存目录
+define('SESSION_PATH', $_SERVER['DOCUMENT_ROOT'].'/session');
+
+
 // 定义应用目录
 define('APP_PATH', __DIR__ . '/../application/');
 // 加载框架引导文件
