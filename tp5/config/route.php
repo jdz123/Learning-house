@@ -18,6 +18,8 @@ Route::get('api/home/getDB','home/Abstract/getDB');//单利模式
 
 Route::get('api/home/abstract$','home/Abstract/call');//策略模式
 
+Route::get('api/home/toy$','home/Abstract/toy');//适配器模式
+
 
 
 
