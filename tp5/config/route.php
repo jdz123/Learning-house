@@ -13,12 +13,19 @@ use think\Route;
 #上传文件
 Route::post('api/common/uploadFile$', 'home/Util/uploadFile'); //上传文件
 
-
+#设计模式
 Route::get('api/home/getDB','home/Abstract/getDB');//单利模式
 
 Route::get('api/home/abstract$','home/Abstract/call');//策略模式
 
 Route::get('api/home/toy$','home/Abstract/toy');//适配器模式
+
+#算法
+Route::get('api/home/bubbleSort$','home/Abstract/bubbleSort');//冒泡排序
+
+Route::get('api/home/quickSort$','home/Abstract/quickSort');//快速排序(双路快排)
+
+Route::get('api/home/insertSort$','home/Abstract/insertSort');//插入排序
 
 
 

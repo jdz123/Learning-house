@@ -7,12 +7,12 @@ class Dog extends Toy
 {
     public function openMouth()
     {
-        echo 'Dog open Mouth\n';
+        echo 'Dog open Mouth<BR>';
     }
 
     public function closeMouth()
     {
-        echo 'Dog close Mouth\n';
+        echo 'Dog close Mouth<BR>';
     }
 }
 
