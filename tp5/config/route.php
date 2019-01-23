@@ -27,6 +27,12 @@ Route::get('api/home/quickSort$','home/Abstract/quickSort');//快速排序(双�
 
 Route::get('api/home/insertSort$','home/Abstract/insertSort');//插入排序
 
+Route::get('api/home/selectSort','home/Abstract/selectSort');//选择排序
+
+Route::get('api/home/king$','home/Abstract/king');//猴子问题
+
+Route::get('api/home/bin_search$','home/Abstract/bin_search');//二分查找
+
 
 
 
