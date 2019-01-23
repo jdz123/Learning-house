@@ -69,6 +69,30 @@ class AbstractController extends CommonController
         print_r($array);
     }
 
+    /**
+     * 选择排序
+     * 把第一个作为最小值，往后依次比较，找到最小值
+     * 找到第一个最小值，放在第一位。
+     * 依次，找到第二个，放到第二位
+     * ......
+     */
+    public function selectSort()
+    {
+        $arr = [2,1,5,55,6,8,10,2];
+        for ($i =0;$i<count($arr);$i++)
+        {
+            $min = $i;
+            for ($j=$i+1;$j<count($arr);$j++)
+            {
+                if ($arr[$j]<$arr[$min]) $min = $j;
+            }
+            $mid = $arr[$i];
+            $arr[$i] = $arr[$min];
+            $arr[$min] = $mid;
+        }
+        print_r($arr);exit();
+
+    }
 
     /** 快速排序 找基准数 左右分组交换至左小右大
      * （双路快排）
@@ -172,16 +196,70 @@ class AbstractController extends CommonController
     print_r($arr);
     }
 
+
     /**
-     * 原则：就像扑克牌，将新牌插到有序的牌中（从后开始比较，直到找到比他小的，插他后面）
+     * 归并排序
+     * （本质：分治算法的思想）
+     * 把大数组不停地拆分，直到拆到最小，然后在排序合并
      */
-    public function a()
+
+    public function mergeSort()
     {
 
     }
 
 
 
+    /**
+     * 二分查找
+     * 1.要求数组已经排好顺序
+     */
+    public function bin_search($f = 4,$low =1,$n =10,$arr = [] )
+    {
+//        array_rand(range(1,100),10)
+        if (!$arr) $arr = array_rand(range(1,100),10);
+        $mid = intval(($n-$low+1)/2);
+
+        if (($low==$mid) && ($f != $arr[$n-1]) && $f != $arr[$low-1])
+        {
+            exit('找不到');
+        }
+        if ($f == $arr[$mid-1])
+        {
+            print_r($arr);
+            print_r('--'.$f.'--');
+            return $mid;
+        }
+        elseif ($f<$arr[$mid-1]) $this->bin_search($f,$low,$mid,$arr);
+        else $this->bin_search($f,$mid,$n,$arr);
+
+    }
+
+
+    /**
+     * 一群猴子排成一圈，按1，2，...，n依次编号。然后从第1只开始数，数到第m只,把它踢出圈，从它后面再开始数，
+     * 再数到第m只，在把它踢出去...，如此不停的进行下去，直到最后只剩下一只猴子为止，那只猴子就叫做大王。
+     * 要求编程模拟此过程，输入m、n,输出最后那个大王的编号。（新浪）（小米）
+     */
+
+    public function king($n = 7,$m =2)
+    {
+        $monkey = range(1, $n);
+        $i = 0;
+
+        while (count($monkey) >1) {
+            $i += 1;
+            $head = array_shift($monkey);//出列最前面的猴子
+            if ($i % $m !=0) {
+                #如果不是m的倍数，则把猴子返回尾部
+                array_push($monkey,$head);
+            }
+
+            // 剩下的最后一个就是大王了
+            echo  $monkey[0];
+        }
+
+    }
 
 
 
