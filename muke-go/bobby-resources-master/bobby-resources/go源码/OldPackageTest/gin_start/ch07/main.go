@@ -15,7 +15,7 @@ import (
 	en_translations "github.com/go-playground/validator/v10/translations/en"
 	zh_translations "github.com/go-playground/validator/v10/translations/zh"
 )
-
+//注册表单验证
 var trans ut.Translator
 
 type LoginForm struct {
