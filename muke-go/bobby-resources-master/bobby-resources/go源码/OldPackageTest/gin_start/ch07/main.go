@@ -38,7 +38,7 @@ func removeTopStruct(fileds map[string]string) map[string]string {
 	}
 	return rsp
 }
-
+//表单验证错误翻译成中文
 func InitTrans(locale string) (err error) {
 	//修改gin框架中的validator引擎属性, 实现定制
 	if v, ok := binding.Validator.Engine().(*validator.Validate); ok {
