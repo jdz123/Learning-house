@@ -24,8 +24,8 @@ type LoginForm struct {
 }
 
 type SignUpForm struct {
-	Age        uint8  `json:"age" binding:"gte=1,lte=130"`
-	Name       string `json:"name" binding:"required,min=3"`
+	Age        uint8  `json:"age" binding:"gte=1,lte=130"` //  1<age<130
+	Name       string `json:"name" binding:"required,min=3"` 
 	Email      string `json:"email" binding:"required,email"`
 	Password   string `json:"password" binding:"required"`
 	RePassword string `json:"re_password" binding:"required,eqfield=Password"` //跨字段
