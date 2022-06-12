@@ -41,6 +41,7 @@ func main() {
 	}
 
 	for i := 0; i < 12; i++ {
+		//使用some-test规则 流控入口代码
 		e, b := sentinel.Entry("some-test", sentinel.WithTrafficType(base.Inbound))
 		if b != nil {
 			fmt.Println("限流了")
