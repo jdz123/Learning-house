@@ -30,7 +30,7 @@ func main() {
 			TokenCalculateStrategy: flow.WarmUp, //冷启动策略
 			ControlBehavior:        flow.Reject, //直接拒绝
 			Threshold:              1000,
-			WarmUpPeriodSec:        30,
+			WarmUpPeriodSec:        30,  //30s 内达到1000
 		},
 	})
 
