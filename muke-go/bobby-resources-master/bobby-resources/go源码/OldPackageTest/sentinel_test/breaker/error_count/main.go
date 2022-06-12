@@ -49,7 +49,7 @@ func main() {
 		// Statistic time span=10s, recoveryTimeout=3s, maxErrorCount=50
 		{
 			Resource:         "abc",
-			Strategy:         circuitbreaker.ErrorCount,
+			Strategy:         circuitbreaker.ErrorCount,//基于错误数熔断
 			RetryTimeoutMs:   3000, //3s之后尝试恢复
 			MinRequestAmount: 10,   //静默数  10个以内全部通过
 			StatIntervalMs:   5000,//5s中不超过50个
