@@ -17,7 +17,7 @@ func main() {
 		log.Fatalf("初始化sentinel 异常: %v", err)
 	}
 
-	//配置限流规则
+	//配置多个限流规则
 	_, err = flow.LoadRules([]*flow.Rule{
 		{
 			Resource:               "some-test",
