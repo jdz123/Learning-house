@@ -50,9 +50,9 @@ func main() {
 		{
 			Resource:         "abc",
 			Strategy:         circuitbreaker.ErrorCount,
-			RetryTimeoutMs:   3000, //3s只有尝试回复
-			MinRequestAmount: 10,   //静默数
-			StatIntervalMs:   5000,
+			RetryTimeoutMs:   3000, //3s之后尝试恢复
+			MinRequestAmount: 10,   //静默数  10个以内全部通过
+			StatIntervalMs:   5000,//5s中不超过50个
 			Threshold:        50,
 		},
 	})
