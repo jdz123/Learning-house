@@ -50,10 +50,10 @@ func main() {
 		{
 			Resource:         "abc",
 			Strategy:         circuitbreaker.ErrorRatio,
-			RetryTimeoutMs:   3000, //3s只有尝试回复
+			RetryTimeoutMs:   3000, //3s之后尝试恢复
 			MinRequestAmount: 10,   //静默数
 			StatIntervalMs:   5000,
-			Threshold:        0.4,
+			Threshold:        0.4,  //错误率40%
 		},
 	})
 	if err != nil {
