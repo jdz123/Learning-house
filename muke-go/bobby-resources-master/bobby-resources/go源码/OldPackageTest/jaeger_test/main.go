@@ -27,15 +27,16 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
+	opentracing.SetGlobalTracer(tracer)
 	// 嵌套span
-	//parentSpan := tracer.StartSpan("main")
-	//span1 := tracer.StartSpan("funcA", opentracing.ChildOf(parentSpan.Context()))
+	//parentSpan := opentracing.StartSpan("main")
+	//span1 := opentracing.StartSpan("funcA", opentracing.ChildOf(parentSpan.Context()))
 	//span1.Finish()
 	//
-	//span2 := tracer.StartSpan("funcB",opentracing.ChildOf(parentSpan.Context()))
+	//span2 := opentracing.StartSpan("funcB",opentracing.ChildOf(parentSpan.Context()))
 	//span2.Finish()
 	//parentSpan.Finish()
-	opentracing.SetGlobalTracer(tracer)
+	
 	defer closer.Close()
 	span := opentracing.StartSpan("go-grpc-web")
 	time.Sleep(time.Second)
