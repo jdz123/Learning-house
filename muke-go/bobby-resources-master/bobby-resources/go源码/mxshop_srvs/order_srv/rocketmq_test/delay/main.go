@@ -18,7 +18,7 @@ func main() {
 	if err = p.Start(); err != nil {panic("启动producer失败")}
 
 	msg := primitive.NewMessage("imooc1", []byte("this is delay message"))
-	msg.WithDelayTimeLevel(3)
+	msg.WithDelayTimeLevel(3)//1s 5s 10s 30s 1m 2m 3m 4m 5m 6m 7m 8m 9m 10m 20m 30m 1h 2h   延迟10s
 	res, err := p.SendSync(context.Background(), msg)
 	if err != nil {
 		fmt.Printf("发送失败: %s\n", err)
